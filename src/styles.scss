@@ -1,1 +1,211 @@
 /* You can add global styles to this file, and also import other style files */
+html,body{
+    margin: 0px;
+    min-height: 100%;
+    height: 100%;
+    font-family: 'Work Sans', sans-serif;
+    overflow-y: hidden;
+}
+$color0: rgb(36, 36, 36);
+$color1: #5c5c5c;
+$accent: rgb(206, 206, 7);
+$accent_light: #f8bd57;
+$primary: red;
+$transition: all ease .3s;
+$gradient: linear-gradient(-45deg,$color0, $color1);
+$shadow: 0px 0px 6px -2px #000000a3;
+button{
+    border: 0px;
+}
+.main-content{
+    background: $color0;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-right: 0px;
+    overflow-y: hidden;
+} 
+app-home, app-car-detail, .route-div{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.header{
+    width: 100%;
+    display: flex;
+}
+
+.logo{
+    color: $accent;  
+    z-index: 100;
+    background: $gradient;
+    padding: 18px;
+    box-shadow: $shadow;
+    .logo-t1{
+        font-size: 38px;
+        font-weight: 800;
+        margin-top: -8px;
+    }
+    .logo-t2{
+        font-size: 18px;
+    }
+}
+.intro{
+    display: flex;
+    margin-top: 18px;
+    margin-left: 18px;
+    z-index: 10;
+    overflow-x: auto;
+    
+    .intro-box{
+        z-index: 100;
+        width: 55px;
+        height: 55px;
+        background: $gradient;
+        margin-right: 18px;
+        border-radius: 8px;
+        box-shadow: $shadow;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 24px;    
+        cursor: pointer;
+    }
+    .intro-active{
+        background: $accent !important;
+        color: $color0 !important;
+    }
+}
+
+
+.search{
+    margin: 18px;
+    
+    position: relative;
+    margin-bottom: 0px;
+
+    background: $gradient;
+    border-radius: 8px;
+    
+    box-shadow: $shadow;
+    padding-left: 18px;
+    overflow: hidden;
+    input{
+        height: 50px;
+        background: transparent;    
+        width: 80%;
+        border: 0px;
+        color: white;
+        font-size: 24px;
+        &::placeholder{
+            font-size: 16px;
+            padding-left: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    i{
+        color: $accent;
+        position: absolute;
+        right: 20px;
+        top: 13px;
+        font-size: 22px;
+    }
+}
+.h1{
+    margin: 18px auto;
+    display: flex;
+    align-items: center;
+    margin-left: 18px;
+    color: white;
+    border-left: 7px solid #cece07;
+    height: 13px;
+    padding-left: 8px;
+}
+.content{
+    display: flex;
+    overflow-y: scroll;
+    z-index: 100;
+    flex: 1;
+    
+    .content-box{
+        overflow: hidden;
+        z-index: 100;
+        width: 300px;
+        min-width: 300px;
+        height: 100%;
+        background: $gradient;
+        border-radius: 8px;
+        box-shadow: $shadow;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;;
+        margin-left: 18px;
+        margin-right: 18px;
+        position: relative;
+        .content-img{
+            background-image: url('/assets/img/car.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            flex: 8;
+        }
+        .content-name{
+            color: white;
+            font-size: 18px;
+            letter-spacing: 2px;
+            padding: 12px;
+            display: flex;
+            align-items: center;
+        }
+        .content-price{
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            padding: 12px;
+            background: $accent;
+            border-top-left-radius: 8px;
+            font-weight: bold;;
+            text-align: right;
+        }
+    } 
+}
+
+.footer{
+    height: 60px;
+    margin-top: 18px;
+    background: $gradient;
+    box-shadow: $shadow;
+    border-radius: 8px;
+    margin-right: 18px;
+    z-index: 100;
+    margin-left: 18px;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.loading{
+    position: fixed;
+    background: $gradient;
+    width: 100%;
+    height: 100%;
+    color: $accent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+}
+
+.line-bar{
+    height: 5px;
+    background: $accent;
+    z-index: 999;
+
+}

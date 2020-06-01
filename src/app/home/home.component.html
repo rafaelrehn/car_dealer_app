@@ -1,0 +1,18 @@
+<!-- <div class="search">
+    <input type="text" placeholder="Pesquise seu novo veículo aqui">
+    <i class="fa fa-search"></i>
+  </div> -->
+
+  <div class="h1">Destaques</div>
+  <div class="content" >
+    <!-- (click)="goDetail(item)" -->
+    <div *ngFor="let el of listModel" class="content-box" (click)="goDetail(el.id)">
+    <div class="content-name" 
+        [@openNome]="el.isOpen ? 'open' : 'closed'"
+    >{{el.nome}}</div>
+      <div class="content-img"></div>
+      <div class="content-price"
+      [@openValor]="el.isOpen ? 'open' : 'closed'"
+      >R$ {{el.valor}}</div>
+    </div>
+  </div>

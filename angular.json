@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "leonv2"
+    }
+  },
+  "defaultProject": "leonv2",
+  "cli": {
+    "analytics": false
+  }
 }
