@@ -1,0 +1,63 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans:400italic,700italic,400,700);
+@import '../../theme.scss';
+// Font Variables
+$open-sans: 'Open Sans', sans-serif;
+
+// html, body{
+//   min-height: 100%;
+//   height: 100%;
+//   background: black;
+  
+// }
+.load-box{
+    font-family: $open-sans;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  background: $color0;
+}
+.load-box-info{
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    .load-box-label{
+        color: lightgrey;
+        font-weight: bold;
+        font-size: 12px;
+        margin-bottom: 6px;
+        letter-spacing: 10px;
+    }
+    .load-box-line{
+        width: 120px;
+        height: 2px;
+        background: grey;
+        position: relative;
+        overflow: hidden;
+        &:after{
+            content: "";
+            width: 40px;
+            height: 2px;
+            background: $accent;
+            position: absolute;
+            left: 0px;
+            animation: move 1s cubic-bezier(0.63, 0.03, 0.4, 1) 0s infinite;
+            animation-direction: alternate-reverse;
+            border-radius: 5px;
+        }
+    }
+}
+
+@keyframes move{
+    from{
+        left: -20px;
+    }
+    to{
+        left: 100px
+    }
+}

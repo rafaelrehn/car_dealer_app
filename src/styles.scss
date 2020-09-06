@@ -1,3 +1,4 @@
+@import 'theme.scss';
 /* You can add global styles to this file, and also import other style files */
 html,body{
     margin: 0px;
@@ -6,14 +7,14 @@ html,body{
     font-family: 'Work Sans', sans-serif;
     overflow-y: hidden;
 }
-$color0: rgb(36, 36, 36);
-$color1: #5c5c5c;
-$accent: rgb(206, 206, 7);
-$accent_light: #f8bd57;
-$primary: red;
-$transition: all ease .3s;
-$gradient: linear-gradient(-45deg,$color0, $color1);
-$shadow: 0px 0px 6px -2px #000000a3;
+// $color0: rgb(36, 36, 36);
+// $color1: #5c5c5c;
+// $accent: rgb(206, 206, 7);
+// $accent_light: #f8bd57;
+// $primary: red;
+// $transition: all ease .3s;
+// $gradient: linear-gradient(-45deg,$color0, $color1);
+// $shadow: 0px 0px 6px -2px #000000a3;
 button{
     border: 0px;
 }

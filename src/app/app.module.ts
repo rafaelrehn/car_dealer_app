@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AboutPageComponent } from './about-page/about-page.component';
 import { ListCarsComponent } from './list-cars/list-cars.component';
+import { LoaderBarComponent } from './loader-bar/loader-bar.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ListCarsComponent } from './list-cars/list-cars.component';
     CarDetailComponent,
     HomeComponent,
     AboutPageComponent,
-    ListCarsComponent
+    ListCarsComponent,
+    LoaderBarComponent
   ],
   imports: [
     BrowserModule,

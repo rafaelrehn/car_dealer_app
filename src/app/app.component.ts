@@ -11,40 +11,50 @@ import {
   stagger,
 } from '@angular/animations';
 import { slideInAnimation } from './animations';
+import { ServiceService } from './service.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   animations:[
-    slideInAnimation
+    slideInAnimation,
+    trigger('loader', [
+      transition(':enter', [
+        style({opacity: 0}),
+        animate('1s ease', style({opacity: 1}))
+      ]),
+      transition(':leave', [
+        style({opacity: 1}),
+        animate('1s ease', style({opacity: 0}))
+      ])
+    ])
   ]
 
 })
 export class AppComponent {
-  loading = false
   title = 'CarDealer';
 
   constructor(
+    public service: ServiceService,
     public router: Router
   ){
   }
 
   ngAfterViewInit(){
     setTimeout(()=>{
-      this.loading = false
-    },1000)
+      this.service.loading = true
+    }, 50)
+    setTimeout(()=>{
+      this.service.loading = false
+      setTimeout(()=>{
+        this.service.pushListDestaque()
+      }, 1000)
+    },2000)
   }
 
   routeLink(url){
     this.router.navigate([url]);
-  }
-
-  resetLoading(){
-    this.loading = true
-    setTimeout(()=>{
-      this.loading = false
-    },1000)
   }
 
   prepareRoute(outlet: RouterOutlet) {

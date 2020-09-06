@@ -1,6 +1,7 @@
-<div class="loading" *ngIf="loading"> loading screen</div>
 <!-- <div class="loading" *ngIf="loading"> loading screen</div> -->
-<div class="main-content">
+<app-loader-bar [@loader]  *ngIf="service.loading"></app-loader-bar>
+<!-- <div class="loading" *ngIf="loading"> loading screen</div> -->
+<div class="main-content" *ngIf="!service.loading">
 <!-- <div [@start]="loading ? 'off' : 'on'" class="main-content"> -->
   <div class="line-bar"></div> 
 
@@ -8,12 +9,12 @@
     <div class="logo-t1">AP Automóveis</div>
   </div> -->
 
-  <div class="intro">
+  <!-- <div class="intro">
     <button routerLink="home" routerLinkActive="intro-active" class="intro-box"><i class="fa fa-home"></i></button>
     <button routerLink="sobre" routerLinkActive="intro-active" class="intro-box"><i class="fa fa-info"></i></button>
     <button routerLink="estoque" routerLinkActive="intro-active" class="intro-box"><i class="fa fa-car"></i></button>
     <button routerLink="detalhes" routerLinkActive="intro-active" class="intro-box"><i class="fa fa-flag"></i></button>
-  </div>
+  </div> -->
 
   <div [@routeAnimations]="prepareRoute(outlet)" class="route-div">
     <router-outlet #outlet="outlet"></router-outlet>
@@ -21,8 +22,8 @@
  
   
   
-  <div class="footer">
+  <!-- <div class="footer">
     rafaelluizrehn@gmail.com
-  </div>
+  </div> -->
 
 </div> 

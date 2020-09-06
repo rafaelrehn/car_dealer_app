@@ -1,0 +1,186 @@
+@import '../../theme.scss';
+
+.home-content{
+    display: flex;
+    height: 100%;
+}
+.box-cards{
+    display: flex;
+    flex: 1;
+    position: relative;
+}
+.list-cards{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+.action-cards{
+    $width: 40px;
+    $heigth: 40px;
+    $top: calc(50% - 20px);
+    width: $width;
+    height: $heigth;
+    background: rgba(0, 0, 0, 0.25);
+    position: absolute;
+    top: $top;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color0;
+    transition: all .3s ease;
+    cursor: pointer;
+    animation-fill-mode: forwards;
+    &:hover{
+        background: rgba(0, 0, 0, 0.35);
+    }
+}
+.ac-right{
+    right: 10px;
+}
+.ac-left{
+    left: 10px;    
+}
+.cards{
+    transition: all .4s ease;
+    border-radius: 12px;
+    transform: perspective(361px) rotateY(9deg);
+    position: absolute;
+    box-shadow: 0px 0px 18px -9px rgba(255, 255, 254, 0.87);
+    background-repeat: no-repeat !important;
+    background-position: center;
+    background-size: cover; 
+  
+  }
+
+
+
+.home-info{
+    display: flex;
+    flex: 1;
+    color: $text-color;
+    .home-c1{
+        padding: 12px;
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        justify-content: center;
+        flex: 1;
+    }
+    .home-c2{
+        flex: 1;
+    }
+    .home-title{
+        font-size: 48px;
+        font-weight: 800;
+        text-shadow: 0px 0px 7px rgba(255,255,255, 0.3);
+        opacity: 0;
+        animation: surgir 0.6s ease;
+        animation-delay: 2.3s;
+        animation-fill-mode: forwards;
+    }
+    .home-description{
+        opacity: 0;
+        padding: 12px;
+        animation: surgir 0.6s ease;
+        animation-delay: 2.6s;
+        animation-fill-mode: forwards;
+    }
+}
+
+.home-btn{
+    opacity: 0;
+    background: $accent;
+    width: 326px;
+    height: 40px;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all .3s ease;
+    animation: surgir 0.6s ease;
+    animation-delay: 2.9s;
+    animation-fill-mode: forwards;
+    &:hover{
+        box-shadow: 0px 0px 6px -1px $accent;
+        color: $color0 !important;
+    }   
+}
+
+@keyframes surgir{
+    from{
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.arrow{
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(45deg, $accent 50%, transparent 50%);
+}
+.a-left{
+    transform: rotate(45deg);
+}
+.a-right{
+    transform: rotate(-135deg);
+}
+
+@keyframes act-btn{
+    from{ transform: scale(0);}
+    to{ transform: scale(1);}
+}
+
+@for $i from 1 through 5{
+    .cards:nth-child(#{$i}){
+        height: 300px + $i * 32px;
+        width: 35% + $i * 8%;
+        left: $i * 45px;  
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .home-content{
+        flex-direction: column;
+    }
+    .home-btn{
+        width: 100% !important;
+    }
+
+    .home-title{
+        text-align: center;
+        font-size: 32px !important;
+        width: 100%;
+    }
+    .home-c2{
+        display: none !important;
+    }
+    .box-cards{
+        flex: 2 !important;
+    }
+    .home-description{
+        padding: 12px;
+        text-align: center;
+    }
+    
+
+    @for $i from 1 through 5{
+        .cards:nth-child(#{$i}){
+            height: 160px + $i * 32px;
+            width: 35% + $i * 8%;
+            left: $i * 15px;  
+            // opacity: 1;
+            // transform: perspective(361px) rotateY(9deg);
+        }
+    }
+}

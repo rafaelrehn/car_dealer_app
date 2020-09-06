@@ -1,18 +1,27 @@
-<!-- <div class="search">
-    <input type="text" placeholder="Pesquise seu novo veículo aqui">
-    <i class="fa fa-search"></i>
-  </div> -->
-
-  <div class="h1">Destaques</div>
-  <div class="content" >
-    <!-- (click)="goDetail(item)" -->
-    <div *ngFor="let el of listModel" class="content-box" (click)="goDetail(el.id)">
-    <div class="content-name" 
-        [@openNome]="el.isOpen ? 'open' : 'closed'"
-    >{{el.nome}}</div>
-      <div class="content-img"></div>
-      <div class="content-price"
-      [@openValor]="el.isOpen ? 'open' : 'closed'"
-      >R$ {{el.valor}}</div>
+<div class="home-content">
+  <div class="box-cards">
+    <div class="list-cards" [@cardAnimation]="service.listModelDestaque.length">
+      <div class="cards" *ngFor="let model of service.listModelDestaque; let i = index" [style.background-image]="model.img">
+        <div class="action-cards ac-right" *ngIf="service.listModelDestaque.length == i+1" (click)="moveRight(model)">
+          <div class="arrow a-right"></div>
+        </div>
+        <div class="action-cards ac-left" *ngIf="service.listModelDestaque.length == i+1" (click)="moveLeft(model)">
+          <div class="arrow a-left"></div>
+        </div>
+        
+      </div>
     </div>
   </div>
+  <div class="home-info">
+    <div class="home-c1">
+
+      <div class="home-title">Lorem Ipsum <br> Dolor Sit Amet</div>
+      <div class="home-description">Lorem Ipsum Dolor Sit Amet, Lorem Ipsum Dolor Sit Amet, Lorem Ipsum Dolor Sit Amet, Lorem Ipsum Dolor Sit Amet , Lorem Ipsum Dolor Sit Amet, Lorem Ipsum Dolor Sit Amet.</div>
+      <div class="home-btn">Conhecer todos os Veículos</div>
+    </div>
+    <div class="home-c2">
+
+    </div>
+    
+  </div>
+</div>
